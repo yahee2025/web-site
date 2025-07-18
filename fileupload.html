@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yahee computer`s shop</title>
+</head>
+  <link rel="stylesheet" href="style.css">
+<body>
+  <nav>
+    <div class="menu">
+    <li><a href="Yahee.html">home</a></li>
+    <li><a href="picture.html">picture</a></li>
+    <li><a href="form.html">form</a></li>
+    <li><a href="table.html">table</a></li>
+    <li><a href="fileupload.html">fileupload</a></li>
+  </div>
+</nav>
+
+
+    <h1 align="center" style="color: tomato;">USER FILES COLLECTION FORM</h1>
+    <form action="upload.php" method="post" enctype="multipart/form-data" id="myform">
+              <h2>Upload your file</h2>
+
+        <label for="file">Select file to upload:</label>
+        <input type="file" name="file" id="file">
+        <br>
+        <br>
+        
+        <button type="submit" name="submit">Upload File</button>
+      </form>
+</body>
+</html>

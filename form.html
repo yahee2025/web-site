@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yahee computer`s shop</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="menu">
+    <li><a href="Yahee.html">home</a></li>
+    <li><a href="picture.html">picture</a></li>
+    <li><a href="form.html">form</a></li>
+    <li><a href="table.html">table</a></li>
+    <li><a href="fileupload.html">fileupload</a></li>
+    
+  </div>  
+</nav>
+
+   <h2 align="center" style="color: tomato;">USER DETAILS COLLECTION FORM</h2>
+
+<div class="container">
+<fieldset style="margin:20vh auto 0 auto; width: 300px; margin-top: 10px;">
+  <legend style="text-align: center; color: white;">DETAILS</legend>
+<form   id="myform" action="data.php" method="POST">
+  <div class="input-control">
+  <label for="first name">Enter your first name:</label>
+  <input type="text" id="firstName" name="firstName"  placeholder="first name" onkeyup="validateFirstName()">
+  <span id="firstName-error" ></span>
+  
+</div>
+<br>
+<div class="input-control">
+  <label for="last name" >Enter your last name:</label>
+  <input type="text" id="lastName" name="lastName"  placeholder="last name" onkeyup="validateLastName()">
+  <span id="lastName-error" class="error-message"></span>
+</div>
+<br>
+<div>
+  <label>Gender</label>
+  <br>
+  <input type="radio" id="Male" name="Gender" value="Male">
+  <label for="Male">Male</label>
+  <input type="radio" id="Female" name="Gender" value="Female">
+  <label for="Female">Female</label>
+</div>
+<br>
+<div>
+  <label>Hobies</label>
+  <br>
+  <input type="checkbox" id="Study" name="Hobies" value="Studying">
+  <label for="Study">Studying</label>
+  <input type="checkbox" id="Playing Football" name="Hobies" value="Playing Football">
+  <label for="Playing Football">Playing Football</label>
+  <input type="checkbox" id="Checking Movie" name="Hobies" value="Checking Movie">
+  <label for="Checking Movie">Checking Movie</label>
+  <input type="checkbox" id="Celebrating" name="Hobies" value="Celebrating">
+  <label for="Celebrating">Celebrating</label>
+</div>
+<br>
+<div>
+  <label for="Region">Choose a Region</label>
+  <select id="Region" name="Region">
+    <option value="">--Choose--</option>
+    <option value="ARUSHA">ARUSHA</option>
+    <option value="MBEYA">MBEYA</option>
+    <option value="KIGOMA">KIGOMA</option>
+    <option value="DAR ES SALAAM">DAR ES SALAAM</option>
+    <option value="DODOMA">DODOMA</option>
+    <option value="IRINGA">IRINGA</option>
+    <option value="RUKWA">RUKWA</option>
+    <option value="MOSHI">MOSHI</option>
+    <option value="GEITA">GEITA</option>
+    <option value="KATAVI">KATAVI</option>
+    <option value="TANGA">TANGA</option>
+    <option value="MOROGORO">MOROGORO</option>
+    <option value="MWANZA">MWANZA</option>
+    <option value="NJOMBE">NJOMBE</option>
+    <option value="SINGIDA">SINGIDA</option>
+    <option value="TABORA">TABORA</option>
+    <option value="SIMIYU">SIMIYU</option>
+    <option value="SHINYANGA">SHINYANGA</option>
+    <option value="SONGWE">SONGWE</option>
+    <option value="KILIMANJARO">KILIMANJARO</option>
+    <option value="MARA">MARA</option>
+    <option value="MANYARA">MANYARA</option>
+    <option value="KAGERA">KAGERA</option>
+    <option value="LINDI">LINDI</option>
+    <option value="RUVUMA">RUVUMA</option>
+    <option value="MTWARA">MTWARA</option>
+  </select>
+</div>
+<br>
+<div class="input-control">
+<lable for="phone">Enter your phone number:</lable>
+<input type="number" id="phone" name="phoneNumber"  placeholder="phone number" onkeyup="validatePhoneNumber()">
+<span id="phone-error"></span>
+</div>
+<br>
+<div class="input-control">
+  <label for="email">Enter your email:</label>
+  <input type="text" id="email" name="email" placeholder="email" onkeyup="validateEmail()">
+  <span id="email-error"></span>
+</div>
+<div class="input-control">
+  <label for="password">Enter your password:</label>
+  <input type="password" id="password" name="pass" placeholder="password" onkeyup="validatePassword()">
+  <span id="password-error" ></span>
+</div>
+<div class="input-control">
+  <button onclick="return validateForm()" name="submit">Submit</button>
+  <span id="subit-error"></span>
+</div>
+</form>
+
+<div>
+  <button onclick="openmodal()" class="resetbtn">Reset</button>
+</div>
+  <div id="mymodal" class="modal">
+    <div class="modal-content">
+    <span class="close" onclick="closemodal()" >&times;</span>
+    <h2>Reset Modal</h2>
+   <p> Are you sure you want to reset details</p>
+   <br>
+   <br>
+   <button type="reset" onclick="closemodal()" class="resetbtn">OK</button>
+</div>
+</div>
+
+</div>
+</fieldset>
+</body>
+</html>

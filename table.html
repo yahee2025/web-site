@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yahee computer`s shop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="menu">
+    <li><a href="Yahee.html">home</a></li>
+    <li><a href="picture.html">picture</a></li>
+    <li><a href="form.html">form</a></li>
+    <li><a href="table.html">table</a></li>
+    <li><a href="fileupload.html">fileupload</a></li>
+    
+</div>  
+</nav>
+<h3 align="center" style="color:tomato;">MY TIME TABLE</h3>
+
+<table border="2" id="edit">
+
+    
+<tr style="color: crimson;">
+    <th>TIME</th>
+    <th>MONDAY</th>
+    <th>TUESDAY</th>
+    <th>WEDNESDAY</th>
+    <th>THURSDAY</th>
+    <th>FRIDAY</th>
+    <th>SATURDAY</th>
+    <th>SUNDAY</th>
+</tr>
+<tr style="color: blueviolet;">
+    <td class="mytd">07:30-14:00</td>
+    <td>LECTURES</td>
+    <td>LECTURES</td>
+    <td>LECTURES</td>
+    <td>LECTURES</td>
+    <td>LECTURES</td>
+    <td>CLEANNESS</td>
+    <td>CHURCH</td>
+</tr>
+<tr style="color: darkmagenta;">
+    <td>14:00-16:30</td>
+    <td colspan="7" align="center">LUNCH</td>
+    
+</tr>
+<tr style="color: darkolivegreen;">
+    <td>16:30-21:00</td>
+    <td>LECTURES</td>
+    <td>LECTURES</td>
+    <td>LECTURES</td>
+    <td>LECTURES</td>
+    <td>LECTURES</td>
+    <td>CONDUCT ASSIGNMENTS</td>
+    <td>CONDUCT ASSIGNMENTS</td>
+</tr>
+<tr style="color: darkorange;">
+    <td>21:00-22:00</td>
+    <td colspan="7" align="center">DINNER</td>
+    
+</tr>
+<tr style="color: deeppink;">
+    <td>22:00-00:00</td>
+    <td>CS 8147</td>
+    <td>CS 8144</td>
+    <td>CS 8145</td>
+    <td>CS 8143</td>
+    <td>RELAX</td>
+    <td>RELAX</td>
+    <td>RELAX</td>
+    
+</tr>
+<tr style="color: red;">
+    <td>00:00-01:00</td>
+    <td colspan="7" align="center">RELAX</td>
+    
+</tr>
+<tr style="color: dodgerblue;">
+    <td>01:00-02:00</td>
+    <td>CS 8146</td>
+    <td>CS 8142</td>
+    <td>CS 8148</td>
+    <td>CS 8141</td>
+    <td>SLEEP</td>
+    <td>SLEEP</td>
+    <td>SLEEP</td>
+    
+    
+</tr>
+<tr style="color: mediumturquoise;">
+    <td>02:00-07:30</td>
+    <td colspan="7" align="center">SLEEP</td>
+    
+</tr>
+</table>
+<script>
+    var table=document.getElementById('edit');
+    var cells=table.getElementsByTagName('td');
+
+for(var i=0; i < cells.length; i++) {
+    cells[i].onclick = function() {
+    if (this.hasAttribute('data-clicked')) {
+        return;
+    }
+   this.setAttribute('data-clicked','yes');
+   this.setAttribute('data-text',this.innerHTML);
+
+   var input = document.createElement('input');
+   input.setAttribute('type','text');
+   input.value=this.innerHTML;
+   input.style.width=this.offsetwidth - (this.clientleft * 2) + "px";
+   input.style.height=this.offsetHeight - (this.clientTop * 2) + "px";
+   input.style.border="0px";
+   input.style.fontFamily="inherit";
+   input.style.fontSize="inherit";
+   input.style.textAlign="inherit";
+   input.style.backgroundColor="yellow";
+    
+    input.onblur = function() {
+      var td = input.parentElement;
+      var orig_text = input.parentElement.getAttribute('data-text');
+      var current_text = this.value;
+
+      if(orig_text != current_text) {
+        //there are changes in the cell`s text
+        //save to db with Ajax
+        td.removeAttribute('data-clicked');
+        td.removeAttribute('data-text');
+        td.innerHTML = current_text;
+        td.style.cssText = 'padding: 5px';
+        console.log(orig_text +'is changed to' + current_text);
+      }else{
+        td.removeAttribute('data-clicked');
+        td.removeAttribute('data-text');
+        td.innerHTML = orig_text;
+        td.style.cssText = 'padding:5px';
+        console.log('No changes made');
+      }
+    }
+    input.onkeypress =function() {
+        if (event.keycode==13) {
+            this.blur();
+        }
+    }
+   this.innerHTML = '';
+   this.style.cssText = 'padding: 0px 0px';
+   this.append(input);
+   
+}
+}
+
+
+
+</script>
+
+</body>
+</html>
